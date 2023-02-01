@@ -1,0 +1,21 @@
+#strings
+name = 'Reynold'
+gender = 'Male'
+#Integer
+age = 17
+birth = 2005
+
+
+print(name,age,birth,gender)
+
+#booleans
+Has_a_pet = False
+Has_superpowers = True
+
+print(Has_a_pet)
+print(Has_superpowers)
+#Concatenation
+print('my age is: ' + str(age))
+print('my date of birth is: ' + str(birth))
+print('my name is: ' + name)
+print('my gender is: ' + gender)
