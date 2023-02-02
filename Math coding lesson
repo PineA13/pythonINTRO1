@@ -1,0 +1,12 @@
+a = 10
+b = 30
+
+print(a+b) #Add two numbers
+
+g = 45
+h = 20
+t = 10
+
+print((g-h)/t) #Subtract two number and divide the results
+
+print(a//b) # Divivde two numbers and return the answer as an INT
