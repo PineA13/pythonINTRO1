@@ -1,0 +1,7 @@
+first_name = "Reynold"
+last_name = "Beatty"
+birth_year = 2005
+birth_date = "Febuary 24th"
+age = 17
+
+print("my name is " + first_name + " " + last_name + " " + "and i was born on " + str(birth_year) + " " + str(birth_date) + " " + "which would make me" + " " + str(age) + " " + "today")
