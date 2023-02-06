@@ -1,0 +1,12 @@
+#asks user what their first name is
+first_name = input("What is your first name?")
+#asks user what their last name is
+last_name = input("What is your last name?")
+
+def CleanTxt(incoming_text):
+    formatted_text = incoming_text.capitalize()
+    return formatted_text
+
+#prints a statement to welcome the user
+print(f"Good morning {CleanTxt(first_name)} {CleanTxt(last_name)} you are looking extra smart today.")
+
