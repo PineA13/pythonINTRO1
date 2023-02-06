@@ -1,0 +1,7 @@
+#asks user what their first name is
+first_name = input("What is your first name?")
+#asks user what their last name is
+last_name = input("What is your last name?")
+#prints a statement to welcome the user
+print("Good morning " + first_name.capitalize() + " " + last_name.capitalize() + ", " + "you are looking extra smart today.")
+
