@@ -1,0 +1,19 @@
+#Empty "Game" List
+myList = []
+#start counter
+fizzbuzz_counter=1
+#End Counter
+fizzbuzz_end=20
+#Game Loop
+while fizzbuzz_counter <= fizzbuzz_end:
+    
+    if fizzbuzz_counter%3 == 0:
+        myList.append("Fizz")
+    if fizzbuzz_counter%3 == 0:
+        myList.append("Buzz")
+    else:
+        
+    fizzbuzz_counter+=1
+
+
+print(myList)
