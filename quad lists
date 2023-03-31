@@ -1,0 +1,18 @@
+#Created a list of four primary quads
+myPoints = [(5,5),(-5,5),(-5,-5),(5,-5)]
+myQuads = []
+
+for point in myPoints:
+    if point[0] > 0 and point[1] > 0:
+        myQuads.append("Quad1")
+    elif point[0] < 0 and point[1] > 0:
+        myQuads.append("Quad2")
+    elif point[0] < 0 and point[1] < 0:
+        myQuads.append("Quad3")
+    elif point[0] > 0 and point[1] < 0:
+        myQuads.append("Quad4")
+    else:
+        print("Not Quad")
+        
+for i in range(len(myPoints)):
+    print(F"{myPoints[i]} is found in {myQuads[i]}")
