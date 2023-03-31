@@ -1,6 +1,15 @@
 #Created a list of four primary quads
 myPoints = [(5,5),(-5,5),(-5,-5),(5,-5)]
 myQuads = []
+import random
+
+
+for i in range(random.randint(0,5)):
+    xcor = random.randint(-10,10)
+    ycor = random.randint(-10,10)
+    myTuple = (xcor,ycor)
+    myPoints.append(myTuple)
+
 
 for point in myPoints:
     if point[0] > 0 and point[1] > 0:
