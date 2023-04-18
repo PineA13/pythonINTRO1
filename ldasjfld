@@ -6,23 +6,22 @@ import easygui as easy
 
 ###List definitions
 current_users = []
-
+name_box = ("first name", "last name")
+user_choice = ("create user", "print user")
 ###User Data Types (Temporary)
 first_name = ""
 last_name = ""
 username = ""
 
 ###Helper Functions
-
 def MakeUser():
-  first_name = easy.enterbox("what is your first name?", "question 1")
-  last_name = easy.enterbox("what is your last name?", "question 2")
-  return (first_name, last_name)
+  name_input = easy.multenterbox("write your name", "create user", name_box)
+  return (name_input)
 #StoreUser - Take output from MakeUser and append to current_users
-
+easy.choicebox("choose an option", "user creation", user_choice)
 current_users.append(MakeUser())
 #PrintUsers - Prints all current users
-print(current_users)
+easy.textbox(current_users)
 #Optional: Check for numerics in first and last - use with make a user?
 #Optional: Random Username based on first name
 
