@@ -1,0 +1,78 @@
+#############################
+#Turtle Race
+#Reynold Beatty
+#mar 16 2023
+#Basic Turtle - Using multiple turtles and random numbers
+#Goal - Using turtle to create racetrack and coding a race with turtles
+#############################
+
+import turtle
+import random
+
+#Turtles
+bob = turtle.Turtle()
+bob.color("brown")
+bob.penup()
+bob.goto(-10,0)
+ryan = turtle.Turtle()
+ryan.color("red")
+ryan.penup()
+ryan.goto(-20,0)
+jeff = turtle.Turtle()
+jeff.color("blue")
+
+race_w = 100
+race_h = 50
+
+def racetrack():
+  jeff.penup()
+  jeff.goto(-100,0)
+  jeff.pendown()
+  jeff.goto(100,0)
+  jeff.penup()
+  jeff.goto(race_w,-race_h)
+  jeff.pendown()
+  for x in range(2):
+    jeff.lt(90)
+    jeff.fd(2*race_h)
+    jeff.lt(90)
+    jeff.fd(2*race_w)
+
+def name_race(jeff):
+  jeff.penup()
+  jeff.hideturtle()
+  jeff.goto(-140,15)
+  jeff.write("bob", font=("Arial", 16, "normal"))
+  jeff.goto(-150,-35)
+  jeff.write("ryan", font=("Arial", 16, "normal"))
+
+def player_position(turtle1, turtle2):
+  turtle1.goto(-100,30)
+  turtle2.goto(-100,-30)
+
+def random_pace(turtle1):
+  turtle1.fd(random.randint(1,20))
+
+def race(turtle1, turtle2):
+  while turtle1.xcor() < race_w and turtle2.xcor() < race_w:
+    random_pace(turtle1)
+    random_pace(turtle2)
+    
+def winner(turtle1, turtle2):
+  if turtle1.xcor() > turtle2.xcor():
+    jeff.penup()
+    jeff.goto(-100,70)
+    jeff.write("bob is the winner!", font=("Arial", 20, "normal"))
+  else:
+    jeff.penup()
+    jeff.goto(-100,70)
+    jeff.write("ryan is the winner!", font=("Arial", 20, "normal"))
+
+
+  
+racetrack()
+name_race(jeff)
+player_position(bob, ryan)
+#random_pace(bob, ryan)
+race(bob, ryan)
+winner(bob, ryan)
