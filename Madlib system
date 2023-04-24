@@ -1,0 +1,46 @@
+import easygui as easy
+import random
+random_num = random.randint(0, 2)
+print(random_num)
+
+#program type
+
+
+#words
+noun_1 = ["Dog", "Cat" ,"Student"]
+adjective_1 = ["clean", "dirty", "cold"]
+verb_1 = ["roll", "shut", "push"]
+adverb_1 = ["faster!", "quietly", "nicely"]
+interjection_1 = ["Ow!", "Yay!", "Wow!"]
+
+
+
+
+#user choice
+noun_1_choice = easy.choicebox("which word would you like to use", "pick a noun:", noun_1)
+adjective_1_choice = easy.choicebox("choose a word", "pick a adjective", adjective_1)
+verb_1_choice = easy.choicebox("choose a word", "pick a noun:", verb_1)
+
+
+#madlib
+madlib_main = f'this {noun_1_choice} was {verb_1_choice} '
+
+easy.textbox(msg="run", text=madlib_main)
+
+
+#print(noun_1[random_num])
+  
+#https://easygui.sourceforge.net/tutorial.html#integerbox
+#import easygui as easy
+#
+#subjects = ["English", "Math", "Computer Science", "History", "Phys Ed"]
+#favourite = easy.choicebox("What is your favorite course?", "Pick a subject:", subjects)
+#
+#if favourite == "English":
+#  easy.textbox(msg="English", text="To be or not to be: that is the question.")
+#elif favourite == "Math":
+#   easy.textbox(msg="Math",text="I'll take that as a good sine")
+#elif favourite == "Computer Science":
+#    easy.textbox(msg="Computer Science",text="Are you just saying that?")
+#else:
+#    easy.textbox("Good call. " + favourite + " is good.")
