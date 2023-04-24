@@ -1,0 +1,75 @@
+#Reynold Beatty
+#march 15th, 2023
+#https://github.com/PineA13
+
+"""
+In this activity you will be using the basics of Turtle to draw out the Olympics logo.
+
+The code provides you with enough context to generate the first two circles of the five. 
+
+Note: Turtle uses an x,y cordinate system with 0,0 (the origin) being centered within the graphics screen.
+
+Task 1: Please complete circle three by modifying the arguements to what is provided in the comment.
+
+Task 2: Please generate the final two circles.
+
+"""
+
+# allows us to use the turtles library
+import turtle 
+
+# creates a graphics window
+window = turtle.Screen()  
+
+#create a turtle named "t"
+t = turtle.Turtle()
+
+#Graphics Variables
+t.shape("turtle")
+
+
+#1st Circle 
+t.goto(0,0)
+t.color('black')
+t.pendown()
+t.circle(60)
+t.penup()
+
+#2nd Circle
+t.goto(-70,-50)
+t.color("yellow")
+t.pendown()
+t.circle(60)
+t.penup()
+
+#3rd circle
+t.goto(-140,0)
+t.color("blue")
+t.pendown()
+t.circle(60)
+t.penup()
+
+#4th cirlce
+t.goto(70,-50)
+t.color("green")
+t.pendown()
+t.circle(60)
+t.penup()
+
+#5th cirlce
+t.goto(140,0)
+t.color("red")
+t.pendown()
+t.circle(60)
+t.penup()
+t.hideturtle()
+
+
+#3rd Circle - Adjust the arguments to make a circle at x=60,y=-30 with the color of green
+#t.goto(X_POSITION, Y_POSITION)
+#t.pendown()
+#t.circle(COLOR)
+#t.penup()
+
+#4th and 5th Circles
+#Complete the code to generate the final circles of the olympics logo.
