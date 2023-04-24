@@ -1,0 +1,22 @@
+#################################################
+# Name Reynold
+# Computer Science 20
+# DATE Febuary 27th
+#
+# Project: Media Selector
+# Purpose: To help select a show/movie to watch
+#################################################
+print("Comedy show/movies suggestions")
+film_type = str(input("Which type of film do you prefer? MOVIE or SHOW? "))
+if film_type == "MOVIE":
+  actor = str(input("Which actor do you prefer? ROBIN WILLIAMS or ROWAN ATKINSON? "))
+  if actor == "ROBIN WILLIAMS":
+    print("Here are some choices Worlds Greatest Dad, Patch Adams, or Jumanji.")
+  if actor == "ROWAN ATKINSON":
+    print("Here are some choices Mr. Bean's Holiday, Johnny english.")
+if film_type == "SHOW":
+  rating = str(input("Which rating do you prefer PG or R? "))
+  if rating == "PG":
+    print("Here are some shows The office, Friends, or Seinfeld")
+  if rating == "R":
+    print("Here are some choices South Park or The simpsons")
