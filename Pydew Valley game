@@ -21,7 +21,7 @@ class Level:
     def run(self,dt):
         self.display_surface.fill('black')
         self.all_sprites.draw(self.display_surface)
-        self.all_sprites.update(dt)      
+        self.all_sprites.update(dt)       
        
        
        ##############################settings.py#############################################
@@ -112,14 +112,18 @@ if __name__ == '__main__':
 
 import pygame
 from settings import *
+from support import *
 
 class Player(pygame.sprite.Sprite):
     def __init__(self, pos, group):
         super().__init__(group)
         
+        self.import_assets()
+        self.status = 'down_idle'
+        self.frame_index = 0
+        
         # general setup
-        self.image = pygame.Surface((32,64))
-        self.image.fill('green')
+        self.image = self.animations[self.status][self.frame_index]
         self.rect = self.image.get_rect(center = pos)
         
         # movement attributes
@@ -127,8 +131,16 @@ class Player(pygame.sprite.Sprite):
         self.pos = pygame.math.Vector2(self.rect.center)
         self.speed = 200
         
-    def import_assets(slef):
-        self.animations = {}
+    def import_assets(self):
+        self.animations = {'up': [],'down': [],'left': [],'right': [],
+                           'right_idle': [],'left_idle': [],'up_idle': [],'down_idle': [],
+                           'right_hoe': [],'left_hoe': [],'up_hoe': [],'down_hoe': [],
+                           'right_axe': [],'left_axe': [],'up_axe': [],'down_axe': [],
+                           'right_water': [],'left_water': [],'up_water': [],'down_water':[]}
+        for animation in self.animation.keys():
+            full_path = '/graphics/character/' + animation
+            self.animation[animation] = import_folder(full_path)
+        print(self.animations)
         
     def input(self):
         keys = pygame.key.get_pressed()
@@ -165,4 +177,19 @@ class Player(pygame.sprite.Sprite):
         def update(self, dt):
             self.input()
             self.move(dt)
-        
+
+##########################################support.py##############################################
+
+from os import walk
+import pygame
+
+def import_folder(path):
+    surface_list = []
+    
+    for _, __, img_files in walk(path):
+        for image in img_files:
+            full_path = path + '/' + image
+            image_surf = pygame.image.load(full_path).convert_alpha()
+            surf_list.append(image_surf)
+
+    return surface_list
