@@ -21,7 +21,7 @@ class Level:
     def run(self,dt):
         self.display_surface.fill('black')
         self.all_sprites.draw(self.display_surface)
-        self.all_sprites.update(dt)       
+        self.all_sprites.update(dt)      
        
        
        ##############################settings.py#############################################
@@ -133,13 +133,13 @@ class Player(pygame.sprite.Sprite):
         
     def import_assets(self):
         self.animations = {'up': [],'down': [],'left': [],'right': [],
-                           'right_idle': [],'left_idle': [],'up_idle': [],'down_idle': [],
-                           'right_hoe': [],'left_hoe': [],'up_hoe': [],'down_hoe': [],
-                           'right_axe': [],'left_axe': [],'up_axe': [],'down_axe': [],
-                           'right_water': [],'left_water': [],'up_water': [],'down_water':[]}
-        for animation in self.animation.keys():
-            full_path = '/graphics/character/' + animation
-            self.animation[animation] = import_folder(full_path)
+                           'right_idle':[],'left_idle':[],'up_idle':[],'down_idle':[],
+                           'right_hoe':[],'left_hoe':[],'up_hoe':[],'down_hoe':[],
+                           'right_axe':[],'left_axe':[],'up_axe':[],'down_axe':[],
+                           'right_water':[],'left_water':[],'up_water':[],'down_water':[]}
+        for animation in self.animations.keys():
+            full_path = '../graphics/character/' + animation
+            self.animations[animation] = import_folder(full_path)
         print(self.animations)
         
     def input(self):
@@ -177,7 +177,6 @@ class Player(pygame.sprite.Sprite):
         def update(self, dt):
             self.input()
             self.move(dt)
-
 ##########################################support.py##############################################
 
 from os import walk
@@ -190,6 +189,6 @@ def import_folder(path):
         for image in img_files:
             full_path = path + '/' + image
             image_surf = pygame.image.load(full_path).convert_alpha()
-            surf_list.append(image_surf)
+            surface_list.append(image_surf)
 
     return surface_list
