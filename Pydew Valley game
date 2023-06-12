@@ -3,6 +3,7 @@
 import pygame
 from settings import *
 from player import Player
+from overlay import Overlay
 
 class Level:
     def __init__(self):
@@ -14,6 +15,7 @@ class Level:
         self.all_sprites = pygame.sprite.Group()
         
         self.setup()
+        self.overlay = Overlay(self.player)
         
     def setup(self):
         self.player = Player((640,360), self.all_sprites)
@@ -21,8 +23,9 @@ class Level:
     def run(self,dt):
         self.display_surface.fill('black')
         self.all_sprites.draw(self.display_surface)
-        self.all_sprites.update(dt)        
-       
+        self.all_sprites.update(dt)
+        
+        self.overlay.display()
        
        ##############################settings.py#############################################
         
@@ -107,7 +110,6 @@ class Game:
 if __name__ == '__main__':
     game = Game()
     game.run()
-    
 #################################player.py##########################################
 
 import pygame
@@ -264,7 +266,6 @@ class Player(pygame.sprite.Sprite):
         self.animate(dt)
         
 ##########################################support.py##############################################
-
 from os import walk
 import pygame
 
@@ -303,4 +304,31 @@ class Timer:
             self.deactivate()
             if self.func:
                 self.func()
-    
+                
+######################################overlay.py###############################################
+import pygame
+from settings import *
+
+class Overlay:
+    def __init__(self,player):
+        
+        # general setup
+        self.display_surface = pygame.display.get_surface()
+        self.player = player
+        
+        #imports
+        overlay_path = '../graphics/overlay/'
+        self.tools_surf = {tool: pygame.image.load(f'{overlay_path}{tool}.png').convert_alpha() for tool in player.tools}
+        self.seeds_surf = {seed: pygame.image.load(f'{overlay_path}{seed}.png').convert_alpha() for seed in player.seeds}
+
+    def display(self):
+        
+        # tool
+        tool_surf = self.tools_surf[self.player.selected_tool]
+        tool_rect = tool_surf.get_rect(midbottom = OVERLAY_POSITIONS['tool'])
+        self.display_surface.blit(tool_surf,tool_rect)
+        
+        # seeds
+        seed_surf = self.seeds_surf[self.player.selected_seed]
+        seed_rect = seed_surf.get_rect(midbottom = OVERLAY_POSITIONS['seed'])
+        self.display_surface.blit(seed_surf,seed_rect)
