@@ -4,6 +4,7 @@ import pygame
 from settings import *
 from player import Player
 from overlay import Overlay
+from sprites import Generic
 
 class Level:
     def __init__(self):
@@ -12,20 +13,34 @@ class Level:
         self.display_surface = pygame.display.get_surface()
         
         #sprite groups
-        self.all_sprites = pygame.sprite.Group()
+        self.all_sprites = CameraGroup()
         
         self.setup()
         self.overlay = Overlay(self.player)
         
     def setup(self):
         self.player = Player((640,360), self.all_sprites)
+        Generic(
+            pos = (0,0),
+            surf = pygame.image.load('../graphics/world/ground.png').convert_alpha(),
+            groups = self.all_sprites,
+            z = LAYERS['ground'])
     
     def run(self,dt):
         self.display_surface.fill('black')
-        self.all_sprites.draw(self.display_surface)
+        self.all_sprites.custom_draw()
         self.all_sprites.update(dt)
         
         self.overlay.display()
+        
+class CameraGroup(pygame.sprite.Group):
+    def __init__(self):
+        super().__init__()
+        self.display_surface = pygame.display.get_surface()
+        
+    def custom_draw(self):
+        for sprite in self.sprites():
+            self.display_surface.blit(sprite.image, sprite.rect)
        
        ##############################settings.py#############################################
         
@@ -112,7 +127,31 @@ if __name__ == '__main__':
     game.run()
 #################################player.py##########################################
 
-import pygame
+from support import *
+from timer import Timer
+
+class Player(pygame.sprite.Sprite):
+    def __init__(self, pos, group):
+        super().__init__(group)
+        
+        self.import_assets()
+        self.status = 'left_water'
+        self.frame_index = 0
+        
+        # general setup
+        self.image = self.animations[self.status][self.frame_index]
+        self.rect = self.image.get_rect(center = pos)
+        self.z = LAYERS['main']
+        
+        # movement attributes
+        self.direction = pygame.math.Vector2()
+        self.pos = pygame.math.Vector2(self.rect.center)
+        self.speed = 200
+        
+        # timers
+        self.timers = {
+            'tool use': Timer(350,self.use_tool),
+            'tool switch': Timer(200),import pygame
 from settings import *
 from support import *
 from timer import Timer
@@ -128,6 +167,7 @@ class Player(pygame.sprite.Sprite):
         # general setup
         self.image = self.animations[self.status][self.frame_index]
         self.rect = self.image.get_rect(center = pos)
+        self.z = LAYERS['main']
         
         # movement attributes
         self.direction = pygame.math.Vector2()
@@ -136,8 +176,6 @@ class Player(pygame.sprite.Sprite):
         
         # timers
         self.timers = {
-            'tool use': Timer(350,self.use_tool),
-            'tool switch': Timer(200),
             'seed use': Timer(350,self.use_seed),
             'seed switch': Timer(200),
         }
@@ -332,3 +370,15 @@ class Overlay:
         seed_surf = self.seeds_surf[self.player.selected_seed]
         seed_rect = seed_surf.get_rect(midbottom = OVERLAY_POSITIONS['seed'])
         self.display_surface.blit(seed_surf,seed_rect)
+   ####################################sprites.py######################################
+   
+   
+import pygame
+from settings import *
+
+class Generic(pygame.sprite.Sprite):
+    def __init__(self, pos, surf, groups['main']):
+        super().__init__(groups)
+        self.image = surf
+        self.rect = self.image.get_rect(topleft = pos)
+        self.z = z
