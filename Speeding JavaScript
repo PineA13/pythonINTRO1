@@ -1,0 +1,26 @@
+/*********************************************************************
+NAME:Reynold
+DATE:2/14/2024
+CLASS:CS30
+PROGRAM DESCRIPTION:computing results of speeding ticket
+***********************************************************************/
+
+function setup() {
+  createCanvas(400, 400);
+}
+function speeding(speed,birthday){
+ticket=0;
+if (birthday){
+speed += 5;
+}
+if (speed > 60 && speed <= 80){
+ticket=1;
+}
+if (speed >= 80){
+ticket=2;
+}
+return ticket;
+}
+function draw() {
+  background(255);
+}
