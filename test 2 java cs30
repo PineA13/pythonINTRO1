@@ -1,0 +1,82 @@
+/***********************************************************************************
+NAME:
+DATE:
+CLASS:
+PROGRAM DESCRIPTION: Lesson 2 Programming Problems
+*************************************************************************************/
+//Parrot Trouble
+function trouble(talking,hour){
+if(talking && (hour<7||hour>20) ){
+  return true;
+}
+  return false;
+}
+console.log("Question 1"+"\n6 o'clock, talking "+trouble(true,6)+"\n7 o'clock, talking " +trouble(true,7)+"\n6 o'clock, not talking " +trouble(false,6)) //use + concatenation to complete the output to display your result
+
+
+// Question 2 diff21//Use Math.abs(value) to calculate the absolute (non negative) value of a number
+function diff21(n){
+  n = 21 //write function here
+}
+
+diff21(n)
+  diff21(n => 2)
+}
+  
+//call your function here
+console.log("Question 2"+"\n") //use + concatenation to complete the output to display your result
+
+// Question 3 makes10
+function makes10(a,b){
+  
+}
+console.log("Question 3"+"\n")
+
+// Question 4 nearHundred
+function nearHundred(n){
+  
+}
+console.log("Question 4"+"\n")
+
+// Question 5 sortSum
+function sortaSum(a,b){
+  
+}
+console.log("Question 5"+"\n")
+
+//Question 6 posNeg
+function posNeg(a,b,negative){
+  
+}
+console.log("Question 6"+"\n")
+
+//Question 7 cigarParty
+function cigarParty(cigars,isWeekend){
+  
+}
+console.log("Question 7"+"\n")
+
+//Question 8 dateFashion
+function dateFashion(you,date){
+  
+}
+console.log("Question 8"+"\n")
+
+//Question 9 squirrelPlay
+function squirrelPlay(temp,isSummer){
+  
+}
+console.log("Question 9"+"\n")
+
+//Question 10 love7
+function love7(a,b){
+  
+}
+console.log("Question 10"+"\n")
+
+//Question 11 near10
+function near10(num){
+  
+}
+console.log("Question 11"+"\n")
+
