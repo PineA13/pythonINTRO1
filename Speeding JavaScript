@@ -12,8 +12,8 @@ function setup() {
 function speeding(speed,birthday){
 ticket=0;
 
-if (birthday){
-  speed -= 5;
+if (speeding(birthday)){
+  (speed -= 5)
 }
 
   if (speed > 60 && speed <= 80){
@@ -25,13 +25,12 @@ if (speed >= 80){
 }
 
 return ticket;
-  
+ 
 }
 
 
 console.log(speeding(60,true))
-console.log
-
+console.log(speeding(birthday,true))
 
 function draw() {
   background(255);
