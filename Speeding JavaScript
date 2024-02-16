@@ -2,7 +2,7 @@
 NAME:Reynold
 DATE:2/14/2024
 CLASS:CS30
-PROGRAM DESCRIPTION:computing results of speeding ticket
+PROGRAM DESCRIPTION:coding and initiating results of speeding ticket.
 ***********************************************************************/
 
 function setup() {
@@ -12,7 +12,7 @@ function setup() {
 function speeding(speed,birthday){
 ticket=0;
 
-if (speeding(birthday)){
+if (birthday){
   (speed -= 5)
 }
 
@@ -28,13 +28,8 @@ return ticket;
  
 }
 
-
-console.log(speeding(60,true))
-console.log(speeding(birthday,true))
+console.log(speeding(64,true))
 
 function draw() {
   background(255);
 }
-
-
-
