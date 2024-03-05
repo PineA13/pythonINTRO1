@@ -11,23 +11,31 @@ if(talking && (hour<7||hour>20) ){
 }
   return false;
 }
-console.log("Question 1"+"\n6 o'clock, talking "+trouble(true,6)+"\n7 o'clock, talking " +trouble(true,7)+"\n6 o'clock, not talking " +trouble(false,6)) //use + concatenation to complete the output to display your result
+console.log("Question 1"+"\n6 o'clock, talking :"+trouble(true,6)+"\n7 o'clock, talking :" +trouble(true,7)+"\n6 o'clock, not talking :" +trouble(false,6)) //use + concatenation to complete the output to display your result
 
 
 // Question 2 diff21//Use Math.abs(value) to calculate the absolute (non negative) value of a number
 function diff21(n){
-  n = 21 //write function here
-}
+ //write function here
 
-diff21(n)
-  diff21(n => 2)
+
+diff=Math.abs(21-n)
+if (n<21){
+  return diff  
+}
+if (n>21){
+  return diff*2
+}
+  
+  
 }
   
 //call your function here
-console.log("Question 2"+"\n") //use + concatenation to complete the output to display your result
+console.log("Question 2"+"\n"+"Int 13: "+diff21(13)+"\n"+"Int 25: "+diff21(25)) //use + concatenation to complete the output to display your result
 
 // Question 3 makes10
 function makes10(a,b){
+  if ()
   
 }
 console.log("Question 3"+"\n")
@@ -79,4 +87,3 @@ function near10(num){
   
 }
 console.log("Question 11"+"\n")
-
