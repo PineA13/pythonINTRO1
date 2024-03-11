@@ -35,10 +35,16 @@ console.log("Question 2"+"\n"+"Int 13: "+diff21(13)+"\n"+"Int 25: "+diff21(25)) 
 
 // Question 3 makes10
 function makes10(a,b){
-  if ()
-  
+
+  if (a+b==10){
+      return true;
+  }
+  else if (a==10 || b==10){
+    return true;
 }
-console.log("Question 3"+"\n")
+  return false;
+}
+console.log("Question 3"+"\n"+makes10(10,9)+makes10(a+b))
 
 // Question 4 nearHundred
 function nearHundred(n){
