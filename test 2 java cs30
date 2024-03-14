@@ -44,10 +44,12 @@ function makes10(a,b){
 }
   return false;
 }
-console.log("Question 3"+"\n"+makes10(10,9)+makes10(a+b))
+console.log("Question 3"+"\n"+"Input: 10+9"+"\n"+makes10(10,9))
 
 // Question 4 nearHundred
 function nearHundred(n){
+  
+hundred=Math.abs(n)
   
 }
 console.log("Question 4"+"\n")
