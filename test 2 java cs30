@@ -50,9 +50,15 @@ console.log("Question 3"+"\n"+"Input: 10+9"+"\n"+makes10(10,9))
 function nearHundred(n){
   
 hundred=Math.abs(n)
-  
+
+  if (n>=90&&n<=110){
+    return true;
 }
-console.log("Question 4"+"\n")
+    return false;
+
+
+}
+console.log("Question 4"+"\n"+"is number within 10 of 100?"+"\n"+"number chosen: 90"+"\n"+nearHundred(90))
 
 // Question 5 sortSum
 function sortaSum(a,b){
