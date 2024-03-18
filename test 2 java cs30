@@ -63,8 +63,15 @@ console.log("Question 4"+"\n"+"is number within 10 of 100?"+"\n"+"number chosen:
 // Question 5 sortSum
 function sortaSum(a,b){
   
+  sum=Math.abs(a+b)
+  
+  if (a+b>=10&&a+b<=19)
+    return 20;
+  
+  
+  
 }
-console.log("Question 5"+"\n")
+console.log("Question 5"+"\n"+"any sum within 10-19 is returned as 20"+"\n"+"10+5="+sortaSum(10,5))
 
 //Question 6 posNeg
 function posNeg(a,b,negative){
