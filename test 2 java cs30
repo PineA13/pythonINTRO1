@@ -76,17 +76,30 @@ console.log("Question 5"+"\n"+"any sum within 10-19 is returned as 20"+"\n"+"10+
 //Question 6 posNeg
 function posNeg(a,b,negative){
   
+  if (a<0|| b<0 && !negative)
+    return true;
+  if (a<0 && b<0 && negative)
+    return true;
+  
 }
-console.log("Question 6"+"\n")
+console.log("Question 6"+"\n"+"Case(1,-1,false)="+posNeg(1,-1,false)+"\n"+"Case(-1,1,false)="+posNeg(-1,1,false)+"\n"+"Case(-1,-1,true)="+posNeg(-1,-1,true))
 
 //Question 7 cigarParty
 function cigarParty(cigars,isWeekend){
   
+  if (cigars>40 && cigars<60 && !isWeekend){
+    return true;
+  }
+  else if (cigars>40 && isWeekend){
+    return true;
+  }
+  return false
 }
-console.log("Question 7"+"\n")
+console.log("Question 7"+"\n"+"cigarParty(45,not weekend)="+cigarParty(45,false)+"\n"+"cigarParty(95,is weekend)="+cigarParty(95,true))
 
 //Question 8 dateFashion
 function dateFashion(you,date){
+  
   
 }
 console.log("Question 8"+"\n")
