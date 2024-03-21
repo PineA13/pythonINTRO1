@@ -100,24 +100,48 @@ console.log("Question 7"+"\n"+"cigarParty(45,not weekend)="+cigarParty(45,false)
 //Question 8 dateFashion
 function dateFashion(you,date){
   
-  
+  if (you <= 2 || date <= 2)
+    return 0;
+  if (you >= 8 || date >= 8)
+    return 2;
+  else return 1;
+
+
 }
-console.log("Question 8"+"\n")
+console.log("Question 8"+"\n"+"you:5 date:9"+"\n"+"result:"+dateFashion(5,9))
 
 //Question 9 squirrelPlay
 function squirrelPlay(temp,isSummer){
-  
+  if (temp >= 20 && temp <= 25 && !isSummer)
+    return true;
+  if (temp >=20 && temp <= 30 && isSummer)
+    return true;
+  else return false;
 }
-console.log("Question 9"+"\n")
+console.log("Question 9"+"\n"+"temp = 27 & not summer:"+squirrelPlay(27,false)+"\n"+"temp 27 & is summer:"+squirrelPlay(27,true))
 
 //Question 10 love7
 function love7(a,b){
   
+  difference=Math.abs(a-b)
+  
+  if (a == 7 || b == 7)
+    return true;
+  else if (a+b == 7)
+    return true;
+  else if (difference == 7)
+    return true;
+  else return false;
 }
-console.log("Question 10"+"\n")
+console.log("Question 10"+"\n"+love7(-17,-10))
 
 //Question 11 near10
 function near10(num){
   
+  
+  
+  if (num % 10 < 2)
+    return true;
+  
 }
-console.log("Question 11"+"\n")
+console.log("Question 11"+"\n"+near10(19))
