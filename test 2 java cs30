@@ -140,8 +140,9 @@ function near10(num){
   
   
   
-  if (num % 10 < 2)
+  if (num % 18 < 2)
     return true;
   
 }
-console.log("Question 11"+"\n"+near10(19))
+console.log("Question 11"+"\n"+"19%18=1"+
+"\n"+near10(19))
